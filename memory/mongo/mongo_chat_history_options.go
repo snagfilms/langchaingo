@@ -2,6 +2,8 @@ package mongo
 
 import (
 	"errors"
+
+	"go.mongodb.org/mongo-driver/v2/mongo"
 )
 
 const (
@@ -10,8 +12,9 @@ const (
 )
 
 var (
-	errMongoInvalidURL       = errors.New("invalid mongo url option")
-	errMongoInvalidSessionID = errors.New("invalid mongo session id option")
+	errMongoInvalidURL         = errors.New("invalid mongo url option")
+	errMongoInvalidURLOrClient = errors.New("invalid mongo url or mongo client option")
+	errMongoInvalidSessionID   = errors.New("invalid mongo session id option")
 )
 
 type ChatMessageHistoryOption func(m *ChatMessageHistory)
@@ -26,8 +29,8 @@ func applyMongoDBChatOptions(options ...ChatMessageHistoryOption) (*ChatMessageH
 		option(h)
 	}
 
-	if h.url == "" {
-		return nil, errMongoInvalidURL
+	if h.url == "" && h.client == nil {
+		return nil, errMongoInvalidURLOrClient
 	}
 	if h.sessionID == "" {
 		return nil, errMongoInvalidSessionID
@@ -40,6 +43,20 @@ func applyMongoDBChatOptions(options ...ChatMessageHistoryOption) (*ChatMessageH
 func WithConnectionURL(connectionURL string) ChatMessageHistoryOption {
 	return func(p *ChatMessageHistory) {
 		p.url = connectionURL
+	}
+}
+
+// WithClient is an option for specifying the MongoDB existing client. Must be set.
+func WithClient(client *mongo.Client) ChatMessageHistoryOption {
+	return func(p *ChatMessageHistory) {
+		p.client = client
+	}
+}
+
+// WithCollection is an option for specifying the MongoDB existing client. Must be set.
+func WithCollection(collection *mongo.Collection) ChatMessageHistoryOption {
+	return func(p *ChatMessageHistory) {
+		p.collection = collection
 	}
 }
 
