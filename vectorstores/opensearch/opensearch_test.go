@@ -10,18 +10,18 @@ import (
 
 	"github.com/google/uuid"
 	opensearchgo "github.com/opensearch-project/opensearch-go"
+	"github.com/snagfilms/langchaingo/chains"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/internal/testutil/testctr"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/vectorstores"
+	"github.com/snagfilms/langchaingo/vectorstores/opensearch"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/log"
 	tcopensearch "github.com/testcontainers/testcontainers-go/modules/opensearch"
-	"github.com/tmc/langchaingo/chains"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/internal/testutil/testctr"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
-	"github.com/tmc/langchaingo/vectorstores/opensearch"
 )
 
 func getEnvVariables(t *testing.T) (string, string, string) {

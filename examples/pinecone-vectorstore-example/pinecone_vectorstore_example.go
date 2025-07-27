@@ -6,11 +6,11 @@ import (
 	"log"
 
 	"github.com/google/uuid"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
-	"github.com/tmc/langchaingo/vectorstores/pinecone"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/vectorstores"
+	"github.com/snagfilms/langchaingo/vectorstores/pinecone"
 )
 
 func main() {

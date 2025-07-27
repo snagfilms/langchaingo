@@ -8,12 +8,12 @@ import (
 	"os"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/httputil"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/vectorstores"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/httputil"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
 )
 
 // MockEmbedder is a mock embedder for testing.

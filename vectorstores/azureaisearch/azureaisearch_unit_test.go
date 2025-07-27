@@ -14,12 +14,12 @@ import (
 	"testing"
 
 	"github.com/google/uuid"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/httputil"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/vectorstores"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/httputil"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
 )
 
 // testEmbedder is a test embedder for unit testing.

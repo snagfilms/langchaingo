@@ -9,8 +9,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/textsplitter"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/textsplitter"
 )
 
 // CSV represents a CSV document loader.

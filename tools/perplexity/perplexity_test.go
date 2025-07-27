@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/internal/httprr"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/internal/httprr"
 )
 
 func TestPerplexityTool(t *testing.T) {

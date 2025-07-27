@@ -11,18 +11,18 @@ import (
 	"time"
 
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/internal/testutil/testctr"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/util/cloudsqlutil"
+	"github.com/snagfilms/langchaingo/vectorstores/cloudsql"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/log"
 	tcpostgres "github.com/testcontainers/testcontainers-go/modules/postgres"
 	"github.com/testcontainers/testcontainers-go/wait"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/internal/testutil/testctr"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/util/cloudsqlutil"
-	"github.com/tmc/langchaingo/vectorstores/cloudsql"
 )
 
 func preCheckEnvSetting(t *testing.T) string {

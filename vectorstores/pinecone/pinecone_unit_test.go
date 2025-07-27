@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/vectorstores"
 	"github.com/stretchr/testify/assert"
-	"github.com/tmc/langchaingo/vectorstores"
 )
 
 // testEmbedder is a mock embedder for testing

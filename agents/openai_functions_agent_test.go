@@ -6,13 +6,13 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/agents"
+	"github.com/snagfilms/langchaingo/chains"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/prompts"
+	"github.com/snagfilms/langchaingo/tools"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/agents"
-	"github.com/tmc/langchaingo/chains"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/prompts"
-	"github.com/tmc/langchaingo/tools"
 )
 
 func TestOpenAIFunctionsAgentWithHTTPRR(t *testing.T) {

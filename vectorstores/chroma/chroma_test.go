@@ -10,18 +10,18 @@ import (
 
 	chromatypes "github.com/amikos-tech/chroma-go/types"
 	"github.com/google/uuid"
+	"github.com/snagfilms/langchaingo/chains"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/internal/testutil/testctr"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/vectorstores"
+	"github.com/snagfilms/langchaingo/vectorstores/chroma"
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/log"
 	tcchroma "github.com/testcontainers/testcontainers-go/modules/chroma"
-	"github.com/tmc/langchaingo/chains"
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/internal/testutil/testctr"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/vectorstores"
-	"github.com/tmc/langchaingo/vectorstores/chroma"
 )
 
 // TODO (noodnik2):

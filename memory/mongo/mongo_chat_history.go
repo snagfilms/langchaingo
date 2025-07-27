@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/tmc/langchaingo/internal/mongodb"
-	"github.com/tmc/langchaingo/llms"
-	"github.com/tmc/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/internal/mongodb"
+	"github.com/snagfilms/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/schema"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 )

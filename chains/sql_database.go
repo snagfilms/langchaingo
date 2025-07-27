@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/tmc/langchaingo/llms"
-	"github.com/tmc/langchaingo/memory"
-	"github.com/tmc/langchaingo/prompts"
-	"github.com/tmc/langchaingo/schema"
-	"github.com/tmc/langchaingo/tools/sqldatabase"
+	"github.com/snagfilms/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/memory"
+	"github.com/snagfilms/langchaingo/prompts"
+	"github.com/snagfilms/langchaingo/schema"
+	"github.com/snagfilms/langchaingo/tools/sqldatabase"
 )
 
 //nolint:lll
