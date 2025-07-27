@@ -7,7 +7,7 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/bedrockruntime"
-	"github.com/tmc/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/llms"
 )
 
 // Ref: https://boto3.amazonaws.com/v1/documentation/api/1.35.8/reference/services/bedrock-runtime/client/converse.html
@@ -180,9 +180,9 @@ func createNovaCompletion(ctx context.Context,
 	content := output.Output.Message.Content
 	if len(content) == 0 {
 		return nil, errors.New("no results")
-	} else if stopReason := output.StopReason; stopReason != NovaCompletionReasonEndTurn && 
-		stopReason != NovaCompletionReasonStopSequence && 
-		stopReason != NovaCompletionReasonMaxTokens && 
+	} else if stopReason := output.StopReason; stopReason != NovaCompletionReasonEndTurn &&
+		stopReason != NovaCompletionReasonStopSequence &&
+		stopReason != NovaCompletionReasonMaxTokens &&
 		stopReason != NovaCompletionReasonContentFiltered {
 		return nil, errors.New("completed due to " + stopReason + ". Maybe try increasing max tokens")
 	}

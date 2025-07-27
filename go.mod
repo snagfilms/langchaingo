@@ -1,4 +1,4 @@
-module github.com/tmc/langchaingo
+module github.com/snagfilms/langchaingo
 
 go 1.23.0
 
@@ -47,7 +47,7 @@ require (
 	github.com/redis/rueidis v1.0.34
 	github.com/weaviate/weaviate v1.29.0
 	github.com/weaviate/weaviate-go-client/v5 v5.0.2
-	go.mongodb.org/mongo-driver v1.14.0
+	go.mongodb.org/mongo-driver v1.14.0 // indirect
 	go.mongodb.org/mongo-driver/v2 v2.0.0
 )
 
@@ -164,7 +164,6 @@ require (
 // Vector stores - indirect
 require (
 	github.com/milvus-io/milvus-proto/go-api/v2 v2.4.0 // indirect
-	github.com/montanaflynn/stats v0.0.0-20171201202039-1bf9dbcd8cbe // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.2 // indirect
 	github.com/xdg-go/stringprep v1.0.4 // indirect

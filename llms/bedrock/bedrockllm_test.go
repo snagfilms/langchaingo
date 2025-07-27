@@ -8,9 +8,9 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/bedrockruntime"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/llms"
-	"github.com/tmc/langchaingo/llms/bedrock"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/llms/bedrock"
 )
 
 func setUpTestWithTransport(transport http.RoundTripper) (*bedrockruntime.Client, error) {

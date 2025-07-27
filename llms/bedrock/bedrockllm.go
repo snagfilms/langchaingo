@@ -6,9 +6,9 @@ import (
 
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/bedrockruntime"
-	"github.com/tmc/langchaingo/callbacks"
-	"github.com/tmc/langchaingo/llms"
-	"github.com/tmc/langchaingo/llms/bedrock/internal/bedrockclient"
+	"github.com/snagfilms/langchaingo/callbacks"
+	"github.com/snagfilms/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/llms/bedrock/internal/bedrockclient"
 )
 
 const defaultModel = ModelAmazonTitanTextLiteV1

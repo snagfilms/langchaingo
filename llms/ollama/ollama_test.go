@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/llms"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/llms"
 )
 
 func newTestClient(t *testing.T, opts ...Option) *LLM {

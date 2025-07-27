@@ -3,9 +3,9 @@ package alloydb
 import (
 	"errors"
 
-	"github.com/tmc/langchaingo/embeddings"
-	"github.com/tmc/langchaingo/util/alloydbutil"
-	"github.com/tmc/langchaingo/vectorstores"
+	"github.com/snagfilms/langchaingo/embeddings"
+	"github.com/snagfilms/langchaingo/util/alloydbutil"
+	"github.com/snagfilms/langchaingo/vectorstores"
 )
 
 const (

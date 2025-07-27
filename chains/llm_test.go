@@ -5,13 +5,13 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/callbacks"
+	"github.com/snagfilms/langchaingo/httputil"
+	"github.com/snagfilms/langchaingo/internal/httprr"
+	"github.com/snagfilms/langchaingo/llms/googleai"
+	"github.com/snagfilms/langchaingo/llms/openai"
+	"github.com/snagfilms/langchaingo/prompts"
 	"github.com/stretchr/testify/require"
-	"github.com/tmc/langchaingo/callbacks"
-	"github.com/tmc/langchaingo/httputil"
-	"github.com/tmc/langchaingo/internal/httprr"
-	"github.com/tmc/langchaingo/llms/googleai"
-	"github.com/tmc/langchaingo/llms/openai"
-	"github.com/tmc/langchaingo/prompts"
 )
 
 func TestLLMChain(t *testing.T) {
@@ -99,7 +99,7 @@ func TestLLMChainWithGoogleAI(t *testing.T) {
 	chain := NewLLMChain(model, prompt)
 
 	// chains tramples over defaults for options, so setting these options
-	// explicitly is required until https://github.com/tmc/langchaingo/issues/626
+	// explicitly is required until https://github.com/snagfilms/langchaingo/issues/626
 	// is fully resolved.
 	result, err := Predict(ctx, chain,
 		map[string]any{

@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/google/generative-ai-go/genai"
+	"github.com/snagfilms/langchaingo/llms"
 	"github.com/stretchr/testify/assert"
-	"github.com/tmc/langchaingo/llms"
 )
 
 func TestConvertParts(t *testing.T) { //nolint:funlen // comprehensive test

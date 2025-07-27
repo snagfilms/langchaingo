@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
+	"github.com/snagfilms/langchaingo/llms"
+	"github.com/snagfilms/langchaingo/schema"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"github.com/tmc/langchaingo/llms"
-	"github.com/tmc/langchaingo/schema"
 )
 
 // Unit tests that don't require external dependencies
