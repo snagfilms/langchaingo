@@ -21,7 +21,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/testcontainers/testcontainers-go"
 	"github.com/testcontainers/testcontainers-go/log"
-	tcchroma "github.com/testcontainers/testcontainers-go/modules/chroma"
+	"github.com/testcontainers/testcontainers-go/wait"
 )
 
 // TODO (noodnik2):
@@ -630,7 +630,11 @@ func getValues(t *testing.T) (string, string) {
 
 	chromaURL := os.Getenv(chroma.ChromaURLKeyEnvVarName)
 	if chromaURL == "" {
-		chromaContainer, err := tcchroma.Run(context.Background(), "chromadb/chroma:0.4.24", testcontainers.WithLogger(log.TestLogger(t)))
+		chromaContainer, err := testcontainers.Run(context.Background(), "chromadb/chroma:0.4.24",
+			testcontainers.WithLogger(log.TestLogger(t)),
+			testcontainers.WithExposedPorts("8000/tcp"),
+			testcontainers.WithWaitStrategy(wait.ForHTTP("/api/v1/heartbeat").WithPort("8000/tcp")),
+		)
 		if err != nil && strings.Contains(err.Error(), "Cannot connect to the Docker daemon") {
 			t.Skip("Docker not available")
 		}
@@ -641,7 +645,7 @@ func getValues(t *testing.T) (string, string) {
 			}
 		})
 
-		chromaURL, err = chromaContainer.RESTEndpoint(context.Background())
+		chromaURL, err = chromaContainer.PortEndpoint(context.Background(), "8000/tcp", "http")
 		if err != nil {
 			t.Skipf("Failed to get chroma container REST endpoint: %s", err)
 		}
